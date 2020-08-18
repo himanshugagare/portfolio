@@ -1,3 +1,9 @@
+/*<![CDATA[*/
+$(window).bind("load", function () {
+    jQuery(".loader-ripple").fadeOut("slow");
+    jQuery("#loader").delay(0).fadeOut();
+});
+  /*]]>*/
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),

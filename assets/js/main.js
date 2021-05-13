@@ -67,10 +67,17 @@ sr.reveal('.contact__input',{interval: 200});
  const form = document.forms['google-sheet']
 
     form.addEventListener('submit', e => {
-      e.preventDefault()
+      e.preventDefault();
+      $(".subbtn").html("Sending...");
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks For Your Message......."))
+        .then(response => {alert("Thanks For Your Message......."); location.reload(true);})
         .catch(error => console.error('Error!', error.message))
+        // button dissable
+$(function(){
+  $(".subbtn").click(function(){
+    $(this).attr("disabled", true);
+  })
+})
     })
 
 
